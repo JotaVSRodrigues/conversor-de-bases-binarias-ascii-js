@@ -7,6 +7,7 @@ body {
 input {
     font-family: 'Courier New', Courier, monospace;
     font-size: 16px;
+    font-weight: bold;
     background: transparent;
     border: none;
     color: #fafafa;
@@ -15,7 +16,8 @@ input {
 }
 
 span {
-    color:#fafafa
+    color:#fafafa;
+    font-weight: bold;
 }
 
 pre {
@@ -33,3 +35,4 @@ pre {
     margin-bottom: 5px;
     color: #00ff00;
 }
+
