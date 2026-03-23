@@ -1,3 +1,7 @@
+:root {
+    --animation: terminal-bar;
+}
+
 body {
     background: rgba(10, 10, 10, 0.938);
     color: #00ff00;
@@ -18,6 +22,7 @@ input {
 span {
     color:#fafafa;
     font-weight: bold;
+    /* animation: blink 0.8s infinite; */
 }
 
 pre {
@@ -34,5 +39,26 @@ pre {
 #output div {
     margin-bottom: 5px;
     color: #00ff00;
+    /* animation: typing 0.5s steps(30, end); */
+
 }
 
+#output div input {
+    caret-shape: block;
+}
+
+
+@keyframes typing {
+  from {
+      width: 0;
+  }
+  50% {
+      border-left-color: #000;
+  }
+}
+
+@keyframes blink {
+    to {
+        opacity: 0
+    }
+}

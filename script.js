@@ -21,7 +21,7 @@ function createPrompt() {
     line.appendChild(span)
     line.appendChild(input)
     output.appendChild(line)
-
+    
     input.focus() // coloca o foco do teclado no elemento input
 
     // Quando apertar ENTER
