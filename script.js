@@ -1,10 +1,11 @@
-const output = document.getElementById("output");
-
+const output = document.getElementById("output")
 
 function printLine(text) {
     const line = document.createElement("div")
     line.textContent = text
     output.appendChild(line)
+
+    efeitoEmbaralhado(line, text)
 }
 
 function createPrompt() {
@@ -100,6 +101,34 @@ function processCommand(cmd) {
 
 }
 
+// implentação do código do Kevin
+function efeitoEmbaralhado(elemento, textoFinal) {
+    let letras = "ABCDEFGHIJKLMNOPQRTUVWXYZ!@#$1234567890";
+    let iteracao = 0;
+    let intervalo = setInterval(function () {
+        let resultadoTemporario = "";
+
+        for (let i = 0; i < textoFinal.length; i++) {
+            if (i < iteracao) {
+                resultadoTemporario = resultadoTemporario + textoFinal[i];
+            } else {
+                let indiceAleatorio = Math.floor(Math.random() * letras.length);
+                resultadoTemporario = resultadoTemporario + letras[indiceAleatorio];
+            }
+        }
+
+
+        elemento.textContent = resultadoTemporario;
+
+
+        if (iteracao >= textoFinal.length) {
+            clearInterval(intervalo);
+        }
+
+
+        iteracao = iteracao + 0.5; //0.5 é melhor pq as letras muda mais
+    }, 30);
+}
 
 printLine(" ")
 printLine(" ")
