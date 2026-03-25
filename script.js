@@ -1,14 +1,12 @@
 const output = document.getElementById("output");
 
 
-// IMPRIME O TEXTO
 function printLine(text) {
     const line = document.createElement("div")
     line.textContent = text
     output.appendChild(line)
 }
 
-// CRIA NOVAS LINHAS DE COMANDO
 function createPrompt() {
     const line = document.createElement("div")
     
@@ -24,7 +22,6 @@ function createPrompt() {
     
     input.focus() // coloca o foco do teclado no elemento input
     
-    // Quando apertar ENTER
     input.addEventListener("keydown", function (e) {
         if (e.key == "Enter") {
             const command = input.value
@@ -37,14 +34,12 @@ function createPrompt() {
     })
 }
 
-// CONVERSAO DE BASES
 function convert(value, fromBase, toBase) {
     const decimal = parseInt(value, fromBase);
     return decimal.toString(toBase).toUpperCase()
 }
 
 
-// TRADUZ O NOME DA BASE
 function getBase(name) {
     switch (name.toLowerCase()) {
         case "binary": return 2
@@ -56,7 +51,6 @@ function getBase(name) {
 
 }
 
-// PROCESSA O COMANDO
 function processCommand(cmd) {
     const parts = cmd.split(" ")
 
@@ -86,8 +80,7 @@ function processCommand(cmd) {
     // comando: clear
     else if (cmd == "clear") {
         output.innerHTML = ""
-        printLine("")
-
+        createPrompt()
     } 
     
     // comando: help
@@ -108,8 +101,6 @@ function processCommand(cmd) {
 }
 
 
-
-// INICIALIZACAO DO PROGRAMA
 printLine(" ")
 printLine(" ")
 printLine("Digite: convert <base> <valor> to <base>")
